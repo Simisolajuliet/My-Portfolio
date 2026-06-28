@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simisola Ogungbe | Virtual Assistant Portfolio</title>
+  <meta name="description" content="Simisola Ogungbe is a proactive Executive and Virtual Assistant based in Lagos, Nigeria, helping founders and growing businesses with calendar management, inbox organisation, research, and operational support." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C4622D'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Georgia,serif' fill='%23FAF7F2' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Simisola Ogungbe | Virtual Assistant Portfolio" />
+  <meta property="og:description" content="Proactive Executive Virtual Assistant based in Lagos, Nigeria. 2+ years supporting founders and executives across tech, marketing, retail and more." />
+  <meta property="og:image" content="Simisola.jpg" />
+  <meta property="og:url" content="https://simisolaogungbe.netlify.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Simisola Ogungbe | Virtual Assistant Portfolio" />
+  <meta name="twitter:description" content="Proactive Executive Virtual Assistant based in Lagos, Nigeria." />
+  <meta name="twitter:image" content="Simisola.jpg" />
+  <meta name="description" content="Simisola Ogungbe — Proactive Executive Virtual Assistant based in Lagos, Nigeria with 2+ years of experience in calendar management, inbox management, social media, and operations support." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory: #FAF7F2;
+      --espresso: #2C1A0E;
+      --terracotta: #C4622D;
+      --blush: #F0D9C8;
+      --warm-mid: #7A4F3A;
+      --light-brown: #E8D5C4;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--espresso);
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      --ivory: #1a1008;
+      --espresso: #FAF7F2;
+      --blush: #3a2010;
+      --warm-mid: #d4a882;
+      --light-brown: #3a2510;
+      --white: #2a1a0e;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--light-brown);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    body.dark nav { background: rgba(26,16,8,0.95); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--espresso);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--warm-mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    .dark-toggle {
+      background: none;
+      border: 1.5px solid var(--light-brown);
+      border-radius: 20px;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--warm-mid);
+      transition: all 0.2s;
+    }
+
+    .dark-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--espresso);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--light-brown);
+      padding: 1rem 2rem 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--warm-mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--light-brown);
+    }
+
+    .mobile-menu a:hover { color: var(--terracotta); }
+
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(160deg, var(--ivory) 60%, var(--blush) 100%);
+      text-align: center;
+    }
+
+    .hero-inner { max-width: 780px; }
+
+    .hero-photo-wrap {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--terracotta);
+      margin: 0 auto 1.8rem;
+      box-shadow: 0 8px 32px rgba(196,98,45,0.25);
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.7s 0.2s ease both; }
+    .hero h1 { animation: fadeUp 0.7s 0.35s ease both; }
+    .hero-sub { animation: fadeUp 0.7s 0.5s ease both; }
+    .hero-desc { animation: fadeUp 0.7s 0.65s ease both; }
+    .hero-btns { animation: fadeUp 0.7s 0.8s ease both; }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+    }
+
+    .name-underline { position: relative; display: inline-block; }
+
+    .name-underline::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: -6px;
+      height: 4px;
+      background: var(--terracotta);
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      color: var(--warm-mid);
+      font-style: italic;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--warm-mid);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: #a8501f; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--espresso);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      border: 1.5px solid var(--espresso);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--espresso); color: var(--ivory); transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      width: 50px;
+      height: 3px;
+      background: var(--terracotta);
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ABOUT */
+    .about { background: var(--white); }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+    .about-text p { color: var(--warm-mid); margin-bottom: 1.2rem; font-size: 0.98rem; }
+
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    .stat-card { background: var(--blush); border-radius: 8px; padding: 1.5rem; text-align: center; }
+
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--terracotta); display: block; }
+
+    .stat-label { font-size: 0.8rem; font-weight: 500; color: var(--warm-mid); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* SERVICES */
+    .services { background: var(--ivory); }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem;
+      border-top: 3px solid var(--terracotta);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,26,14,0.1); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.7rem; }
+    .service-card p { font-size: 0.88rem; color: var(--warm-mid); line-height: 1.6; }
+
+    /* PORTFOLIO SAMPLES */
+    .portfolio { background: var(--blush); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+    .portfolio-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+
+    .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(44,26,14,0.13); }
+    .portfolio-card { cursor: pointer; }
+
+    /* PORTFOLIO MODAL */
+    .portfolio-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,12,6,0.72);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+    }
+
+    .portfolio-modal-overlay.open { display: flex; }
+
+    .portfolio-modal {
+      background: var(--white);
+      border-radius: 14px;
+      max-width: 920px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      position: relative;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    }
+
+    .portfolio-modal-close {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      background: var(--ivory);
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--espresso);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-modal-close:hover { background: var(--terracotta); color: white; }
+
+    .portfolio-modal-media {
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      min-height: 280px;
+    }
+
+    .portfolio-modal-media img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .portfolio-modal-media .portfolio-preview {
+      transform: scale(1.15);
+      cursor: default;
+    }
+
+    .portfolio-modal-details {
+      padding: 2rem 2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .portfolio-modal-details h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--espresso);
+      margin: 0.8rem 0 0.8rem;
+    }
+
+    .portfolio-modal-details p {
+      font-size: 0.92rem;
+      color: var(--warm-mid);
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+
+    #modalTemplateBtn { display: none; align-self: flex-start; }
+
+    @media (max-width: 720px) {
+      .portfolio-modal { grid-template-columns: 1fr; max-height: 92vh; }
+      .portfolio-modal-media { min-height: 220px; padding: 1.2rem; }
+    }
+
+    .portfolio-preview {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* PROPOSAL PREVIEW */
+    .preview-proposal { background: #f8f9fa; padding: 1rem; }
+
+    .preview-proposal .doc {
+      background: white;
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 0.6rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .preview-proposal .doc-header {
+      background: #2C1A0E;
+      color: white;
+      padding: 0.6rem 0.8rem;
+      border-radius: 3px 3px 0 0;
+      margin: -1rem -1rem 0.6rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .preview-proposal .doc-logo {
+      color: #C4622D;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .preview-proposal .doc-line {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 0.3rem;
+    }
+
+    .preview-proposal .doc-line.short { width: 60%; }
+    .preview-proposal .doc-line.accent { background: #C4622D; width: 40%; }
+    .preview-proposal .doc-line.thin { height: 3px; background: #f0f0f0; }
+
+    /* CALENDAR PREVIEW */
+    .preview-calendar { background: white; padding: 0.8rem; }
+
+    .cal-header {
+      background: #C4622D;
+      color: white;
+      text-align: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.4rem;
+      border-radius: 4px 4px 0 0;
+      letter-spacing: 0.05em;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .cal-day {
+      text-align: center;
+      font-size: 0.5rem;
+      padding: 3px 1px;
+      border-radius: 2px;
+      color: #7A4F3A;
+    }
+
+    .cal-day.header { font-weight: 700; color: #2C1A0E; font-size: 0.48rem; }
+    .cal-day.today { background: #C4622D; color: white; border-radius: 50%; font-weight: 700; }
+    .cal-day.event { background: #F0D9C8; color: #C4622D; font-weight: 600; }
+
+    .cal-events { margin-top: 6px; }
+
+    .cal-event-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.5rem;
+      padding: 3px 5px;
+      border-radius: 3px;
+      margin-bottom: 2px;
+    }
+
+    .cal-event-item.orange { background: #fff3ec; color: #C4622D; }
+    .cal-event-item.blue { background: #ecf0ff; color: #3b5bdb; }
+    .cal-event-item.green { background: #ecfff4; color: #2d8a4e; }
+    .cal-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .cal-dot.orange { background: #C4622D; }
+    .cal-dot.blue { background: #3b5bdb; }
+    .cal-dot.green { background: #2d8a4e; }
+
+    /* EMAIL PREVIEW */
+    .preview-email { background: #f1f3f4; padding: 0.6rem; }
+
+    .email-sidebar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 28%;
+      background: white;
+      padding: 0.5rem;
+      border-right: 1px solid #eee;
+    }
+
+    .email-main {
+      position: absolute;
+      left: 28%; right: 0; top: 0; bottom: 0;
+      padding: 0.5rem;
+      background: white;
+    }
+
+    .email-compose {
+      background: #C4622D;
+      color: white;
+      font-size: 0.5rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .email-folder {
+      font-size: 0.48rem;
+      color: #7A4F3A;
+      padding: 2px 4px;
+      border-radius: 3px;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .email-folder.active { background: #F0D9C8; color: #C4622D; font-weight: 600; }
+
+    .email-item {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 4px 0;
+    }
+
+    .email-item-from { font-size: 0.5rem; font-weight: 700; color: #2C1A0E; }
+    .email-item-sub { font-size: 0.45rem; color: #7A4F3A; }
+    .email-item-tag {
+      display: inline-block;
+      background: #F0D9C8;
+      color: #C4622D;
+      font-size: 0.42rem;
+      padding: 1px 4px;
+      border-radius: 10px;
+      margin-top: 1px;
+    }
+
+    .email-header-bar { font-size: 0.52rem; font-weight: 700; color: #2C1A0E; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 4px; }
+    .email-body-line { height: 3px; background: #f0f0f0; border-radius: 2px; margin-bottom: 2px; }
+    .email-body-line.short { width: 70%; }
+    .email-reply-btn { background: #C4622D; color: white; font-size: 0.45rem; padding: 2px 6px; border-radius: 3px; margin-top: 4px; display: inline-block; }
+
+    /* SOCIAL PREVIEW */
+    .preview-social { background: linear-gradient(135deg, #C4622D 0%, #e08050 50%, #F0D9C8 100%); padding: 0; position: relative; }
+
+    .social-post {
+      background: white;
+      border-radius: 8px;
+      margin: 0.6rem;
+      padding: 0.7rem;
+      height: calc(100% - 1.2rem);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-topbar { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .social-avatar { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #C4622D, #F0D9C8); flex-shrink: 0; }
+    .social-name { font-size: 0.52rem; font-weight: 700; color: #2C1A0E; }
+    .social-handle { font-size: 0.44rem; color: #7A4F3A; }
+
+    .social-image {
+      flex: 1;
+      background: linear-gradient(135deg, #F0D9C8, #C4622D);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-image-text {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 1.3;
+      padding: 0.3rem;
+    }
+
+    .social-image-sub { font-size: 0.45rem; font-weight: 400; opacity: 0.85; }
+
+    .social-caption { font-size: 0.46rem; color: #7A4F3A; line-height: 1.4; margin-bottom: 4px; }
+    .social-caption span { font-weight: 700; color: #C4622D; }
+
+    .social-stats { display: flex; gap: 8px; font-size: 0.44rem; color: #7A4F3A; }
+    .social-stat { display: flex; align-items: center; gap: 2px; }
+
+    /* NOTION PREVIEW */
+    .preview-notion { background: #f7f6f3; padding: 0.6rem; }
+
+    .notion-sidebar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 30%;
+      background: #f0eeea;
+      padding: 0.5rem;
+    }
+
+    .notion-main {
+      position: absolute;
+      left: 30%; right: 0; top: 0; bottom: 0;
+      padding: 0.6rem;
+    }
+
+    .notion-workspace { font-size: 0.5rem; font-weight: 700; color: #2C1A0E; margin-bottom: 6px; }
+
+    .notion-page {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.46rem;
+      color: #7A4F3A;
+      padding: 2px 3px;
+      border-radius: 3px;
+      margin-bottom: 2px;
+    }
+
+    .notion-page.active { background: #E8D5C4; color: #C4622D; font-weight: 600; }
+
+    .notion-title { font-size: 0.7rem; font-weight: 700; color: #2C1A0E; margin-bottom: 4px; }
+
+    .notion-table { width: 100%; border-collapse: collapse; }
+
+    .notion-table th {
+      font-size: 0.42rem;
+      color: #7A4F3A;
+      font-weight: 600;
+      text-align: left;
+      padding: 2px 3px;
+      border-bottom: 1px solid #E8D5C4;
+    }
+
+    .notion-table td {
+      font-size: 0.42rem;
+      color: #2C1A0E;
+      padding: 2px 3px;
+      border-bottom: 1px solid #f0eeea;
+    }
+
+    .notion-tag {
+      display: inline-block;
+      padding: 1px 5px;
+      border-radius: 10px;
+      font-size: 0.4rem;
+      font-weight: 600;
+    }
+
+    .tag-done { background: #d4edda; color: #2d8a4e; }
+    .tag-progress { background: #fff3ec; color: #C4622D; }
+    .tag-pending { background: #f0f0f0; color: #7A4F3A; }
+
+    /* PORTFOLIO CARD INFO */
+    .portfolio-info { padding: 1.2rem 1.4rem; }
+
+    .portfolio-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--terracotta);
+      background: var(--blush);
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+
+    .portfolio-info h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.4rem; }
+    .portfolio-info p { font-size: 0.82rem; color: var(--warm-mid); line-height: 1.5; }
+
+    /* EXPERIENCE */
+    .experience { background: var(--ivory); }
+
+    .timeline { position: relative; padding-left: 2rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--terracotta);
+      opacity: 0.3;
+    }
+
+    .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.42rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--terracotta);
+    }
+
+    .timeline-date { font-size: 0.75rem; font-weight: 600; color: var(--terracotta); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .timeline-role { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--espresso); }
+    .timeline-company { font-size: 0.88rem; color: var(--warm-mid); font-weight: 500; margin-bottom: 0.6rem; }
+    .timeline-desc { font-size: 0.88rem; color: var(--warm-mid); line-height: 1.65; }
+
+    /* SKILLS */
+    .skills { background: var(--white); }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
+    .skills-group h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--espresso);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1.5px solid var(--light-brown);
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .skill-tag {
+      background: var(--blush);
+      color: var(--espresso);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+    }
+
+    /* TOOLS */
+    .tools { background: var(--ivory); }
+
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1rem; }
+
+    .tool-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--espresso);
+      border: 1px solid var(--light-brown);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .tool-card:hover { border-color: var(--terracotta); transform: translateY(-2px); }
+
+    .tool-icon-img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      margin: 0 auto 0.5rem;
+      display: block;
+    }
+
+
+
+    /* CALENDLY BUTTON */
+    .calendly-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--espresso);
+      color: var(--ivory);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .calendly-btn:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+    /* ABOUT PHOTO */
+    .about-photo-wrap {
+      width: 260px;
+      height: 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid var(--blush);
+      box-shadow: 8px 8px 0px var(--terracotta);
+      flex-shrink: 0;
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .about-grid-new {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .about-grid-new { grid-template-columns: 1fr; }
+      .about-photo-wrap { width: 100%; height: 280px; box-shadow: 4px 4px 0px var(--terracotta); }
+    }
+
+    /* AVAILABILITY BADGE */
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(45,138,78,0.12);
+      border: 1.5px solid rgba(45,138,78,0.35);
+      color: #2d8a4e;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.4rem;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .badge-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #2d8a4e;
+      animation: pulse-green 1.8s infinite;
+    }
+    @keyframes pulse-green {
+      0%,100% { box-shadow: 0 0 0 0 rgba(45,138,78,0.5); }
+      50% { box-shadow: 0 0 0 5px rgba(45,138,78,0); }
+    }
+    .typing-wrap {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400; color: var(--warm-mid);
+      font-style: italic; margin: 1.4rem 0 1.2rem; min-height: 2rem;
+    }
+    .typing-cursor {
+      display: inline-block; width: 2px; height: 1.2em;
+      background: var(--terracotta); margin-left: 2px;
+      vertical-align: middle; animation: blink 0.8s infinite;
+    }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+    .achievements { background: var(--espresso); padding: 2.5rem 0; overflow: hidden; }
+    .achievements-wrap { overflow: hidden; }
+    .achievements-track {
+      display: flex; gap: 3rem; align-items: center;
+      animation: scroll-left 24s linear infinite; width: max-content;
+    }
+    .achievements:hover .achievements-track { animation-play-state: paused; }
+    @keyframes scroll-left { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    .achievement-item {
+      display: flex; align-items: center; gap: 0.8rem;
+      white-space: nowrap; color: var(--blush);
+      font-size: 0.9rem; font-weight: 500;
+    }
+    .achievement-item .ach-icon { font-size: 1.2rem; }
+    .achievement-item .ach-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); flex-shrink:0; }
+    .why-hire { background: var(--ivory); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+    .why-card {
+      background: var(--white); border-radius: 10px; padding: 2rem 1.5rem;
+      text-align: center; border-bottom: 3px solid var(--terracotta);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(44,26,14,0.1); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+    .why-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.6rem; }
+    .why-card p { font-size: 0.85rem; color: var(--warm-mid); line-height: 1.6; }
+    .who-section { background: var(--blush); }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.2rem; }
+    .who-card {
+      background: var(--white); border-radius: 10px; padding: 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem; transition: transform 0.2s;
+    }
+    .who-card:hover { transform: translateY(-3px); }
+    .who-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .who-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.3rem; }
+    .who-card p { font-size: 0.8rem; color: var(--warm-mid); line-height: 1.5; }
+    .whatsapp-btn {
+      position: fixed; bottom: 5.5rem; right: 2rem;
+      width: 50px; height: 50px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 50; box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+    .whatsapp-btn svg { width: 26px; height: 26px; fill: white; }
+    .whatsapp-tooltip {
+      position: absolute; right: 58px; background: var(--espresso); color: white;
+      font-size: 0.75rem; font-weight: 500; padding: 0.3rem 0.7rem; border-radius: 4px;
+      white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
+
+
+    /* PORTFOLIO MODAL */
+    #portfolioModal { display: none; }
+    @media (max-width: 640px) {
+      #portfolioModalInner { grid-template-columns: 1fr !important; grid-template-rows: 220px 1fr; }
+    }
+
+    .modal-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .modal-view-btn:hover { background: #a8501f; }
+    /* CERTIFICATIONS */
+    .certifications { background: var(--espresso); }
+    .certifications .section-label { color: var(--blush); }
+    .certifications .section-title { color: var(--ivory); }
+    .certifications .section-divider { background: var(--blush); }
+
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+    .cert-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 1.8rem;
+    }
+
+    .cert-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--ivory); margin-bottom: 0.4rem; }
+    .cert-card p { font-size: 0.83rem; color: var(--blush); }
+    .cert-year { display: inline-block; margin-top: 0.8rem; background: var(--terracotta); color: white; font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 20px; letter-spacing: 0.05em; }
+
+    /* FAQ */
+    .faq { background: var(--blush); }
+    .faq-list { max-width: 700px; }
+
+    .faq-item { border-bottom: 1px solid var(--light-brown); overflow: hidden; }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1.2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--espresso);
+    }
+
+    .faq-question:hover { color: var(--terracotta); }
+
+    .faq-icon { font-size: 1.2rem; color: var(--terracotta); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      font-size: 0.9rem;
+      color: var(--warm-mid);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.2rem; }
+
+    /* CONTACT */
+    .contact { background: var(--white); }
+
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+    .contact-desc { font-size: 0.95rem; color: var(--warm-mid); margin-bottom: 2rem; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--espresso);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--terracotta); }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--light-brown);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.72rem;
+      cursor: pointer;
+      color: var(--warm-mid);
+      transition: all 0.2s;
+      margin-left: auto;
+    }
+
+    .copy-btn:hover { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+    .copy-btn.copied { background: #2d8a4e; color: white; border-color: #2d8a4e; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--espresso); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--light-brown);
+      border-radius: 4px;
+      background: var(--ivory);
+      color: var(--espresso);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--terracotta); }
+
+    .form-success {
+      display: none;
+      background: var(--blush);
+      color: var(--terracotta);
+      border: 1px solid var(--terracotta);
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .form-error {
+      display: none;
+      background: var(--blush);
+      color: #b03a2e;
+      border: 1px solid #b03a2e;
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 50;
+      box-shadow: 0 4px 12px rgba(196,98,45,0.3);
+    }
+
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: #a8501f; }
+
+    footer { background: var(--espresso); color: var(--blush); text-align: center; padding: 1.5rem 2rem; font-size: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .hero-photo-wrap { width: 140px; height: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Simisola Ogungbe</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#why">Why Hire Me</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle">🌙 Dark</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#portfolio" class="mobile-link">Portfolio</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#why" class="mobile-link">Why Hire Me</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img src="Simi.jpeg" alt="Simisola Ogungbe" />
+    </div>
+    <div class="availability-badge"><span class="badge-dot"></span> Available for Work</div>
+    <p class="hero-eyebrow">Virtual Assistant Portfolio</p>
+    <h1>Hi, I am <span class="name-underline">Simisola Ogungbe</span></h1>
+    <p class="typing-wrap"><span id="typingText"></span><span class="typing-cursor"></span></p>
+    <p class="hero-desc">I help founders, executives, and growing businesses stay focused on what matters most while I handle the rest by delivering organised, reliable, and detail-driven administrative support.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">View My Services</a>
+      <a href="#contact" class="btn-secondary">Let's Work Together</a>
+      <a href="Ogungbe Simisola Resume.pdf" class="btn-secondary" download="Simisola Ogungbe Resume.pdf">Download Resume</a>
+      <a href="https://calendly.com/simisola-ogungbe" target="_blank" rel="noopener noreferrer" class="calendly-btn">📅 Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid-new">
+      <!-- About Photo -->
+      <div class="about-photo-wrap reveal">
+        <img src="Simisola.jpg" alt="Simisola Ogungbe" />
+      </div>
+
+      <!-- About Text + Stats -->
+      <div>
+      <div class="about-text reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Organised. Reliable. Always One Step Ahead.</h2>
+        <div class="section-divider"></div>
+        <p>I am a highly organised and proactive virtual assistant based in Lagos, Nigeria, with over two years of experience across tech, clean energy, digital marketing, retail, and professional services.</p>
+        <p>My background in Applied Physics and Electronics gives me a unique edge, as I bring analytical thinking and structured problem solving to every administrative task. I do not just complete work; I anticipate needs, close gaps before they become problems, and protect my client's time and attention.</p>
+        <p>What sets me apart is a scientific background that has sharpened how I think, combined with a genuine commitment to making your working life easier every day. From calendar management and inbox organisation to research, content support, and full operational assistance, you can count on discretion, precision, and dedication to your success.</p>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-card"><span class="stat-number">2+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-card"><span class="stat-number">6+</span><span class="stat-label">Roles and Industries</span></div>
+        
+        <div class="stat-card"><span class="stat-number">2</span><span class="stat-label">Certifications</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="section-label reveal">What I Offer</p>
+    <h2 class="section-title reveal">Services</h2>
+    <div class="section-divider reveal"></div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📅</div>
+        <h3>Calendar and Schedule Management</h3>
+        <p>Managing appointments, scheduling meetings across time zones, and keeping your day structured so nothing slips through.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📧</div>
+        <h3>Inbox and Communication Management</h3>
+        <p>Organising and managing inboxes, drafting correspondence, handling follow ups, and serving as a professional point of contact for your stakeholders.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📂</div>
+        <h3>Document Preparation and Records</h3>
+        <p>Drafting reports, proposals, meeting agendas and minutes, invoices, and maintaining accurate and organised documentation systems.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">🔍</div>
+        <h3>Research and Data Management</h3>
+        <p>Conducting thorough research, compiling data, managing databases, and providing clear summaries to support informed decision making.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Managing content schedules, creating graphics with Canva, conducting audience research, and growing brand engagement across platforms.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">⚙️</div>
+        <h3>Operations and Project Support</h3>
+        <p>Coordinating projects, tracking action items, managing vendors, and providing end to end operational support to keep your business moving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO SAMPLES -->
+<section class="portfolio" id="portfolio">
+  <div class="section-inner">
+    <p class="section-label reveal">Work Samples</p>
+    <h2 class="section-title reveal">Portfolio</h2>
+    <div class="section-divider reveal"></div>
+    <div class="portfolio-grid">
+
+      <!-- PROPOSAL -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="Proposal"
+        data-title="Solar Energy Business Proposal"
+        data-desc="A customised solar energy proposal was drafted for a residential client at Ecopulse Technologies Limited. It covered the executive summary, client needs assessment, solution options with pricing, project timeline, and a solution comparison, all tailored to the client's specific energy requirements."
+        data-details="Company: Ecopulse Technologies Limited | Tool: Microsoft PowerPoint / Canva | Year: 2025"
+        data-img="Proposal.jpg"
+        data-viewlabel="View Proposal"
+        data-viewfile="Mr_Afam_Residential_Power_Solutions_Proposal.pdf">
+        <div class="portfolio-preview" style="padding:0;overflow:hidden;">
+          <img src="Proposal.jpg" alt="Solar Energy Proposal" loading="lazy" style="width:100%;height:200px;object-fit:cover;object-position:top center;" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Proposal</span>
+          <h3>Solar Energy Business Proposal</h3>
+          <p>A tailored residential solar power proposal covering scope, pricing, and partnership terms for a client at Ecopulse Technologies.</p>
+        </div>
+      </div>
+
+      <!-- CALENDAR -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="Calendar Management"
+        data-title="Executive Calendar Organisation"
+        data-desc="A structured weekly executive calendar managed during the ALX VA programme. It features colour-coded events, study blocks, meetings, personal appointments, and daily review sessions, all coordinated to maximise productivity."
+        data-details="Platform: Google Calendar | Year: 2024"
+        data-img="Calendar Management.png">
+        <div class="portfolio-preview" style="padding:0;overflow:hidden;">
+          <img src="Calendar Management.png" alt="Calendar Management" loading="lazy" style="width:100%;height:200px;object-fit:cover;object-position:top center;" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Calendar Management</span>
+          <h3>Executive Calendar Organisation</h3>
+          <p>A colour-coded weekly calendar with meetings, study sessions, and personal appointments structured for maximum productivity.</p>
+        </div>
+      </div>
+
+      <!-- EMAIL MANAGEMENT -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="Inbox Management"
+        data-title="Email and Inbox Management"
+        data-desc="An actively managed Gmail inbox during the ALX Virtual Assistant programme that demonstrates advanced filtering, label organisation, priority flagging with stars, and category sorting, a key skill used to keep an executive's communications structured and responsive."
+        data-details="Platform: Gmail | Programme: ALX Virtual Assistant | Year: 2024"
+        data-img="Inbox Management.png">
+        <div class="portfolio-preview" style="padding:0;overflow:hidden;">
+          <img src="Inbox Management.png" alt="Inbox Management" loading="lazy" style="width:100%;height:200px;object-fit:cover;object-position:top center;" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Inbox Management</span>
+          <h3>Email and Inbox Management</h3>
+          <p>A structured Gmail inbox with labelled folders, priority flags, and category sorting that keeps communications organised and timely.</p>
+        </div>
+      </div>
+
+      <!-- SOCIAL MEDIA -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="Social Media"
+        data-title="Social Media Post and Graphics"
+        data-desc="A branded store policy graphic created for Rated Miss Pretty's Instagram page using Canva. The post clearly communicated shipping timelines, refund policies, product availability, and payment methods designed to reduce customer queries and maintain consistent brand presentation."
+        data-details="Platform: Instagram | Tool: Canva | Client: Rated Miss Pretty | Year: 2024"
+        data-img="Rated miss pretty.jpeg">
+        <div class="portfolio-preview" style="padding:0;overflow:hidden;">
+          <img src="Rated miss pretty.jpeg" alt="Rated Miss Pretty Social Media Post" loading="lazy" style="width:100%;height:200px;object-fit:cover;object-position:top center;" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Social Media</span>
+          <h3>Social Media Post and Graphics</h3>
+          <p>A branded store policy graphic for Rated Miss Pretty's Instagram, designed on Canva to reduce customer queries and boost clarity.</p>
+        </div>
+      </div>
+
+      <!-- MEETING AGENDA -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="Administrative Support"
+        data-title="Meeting Agenda and Minutes"
+        data-desc="An operations rundown meeting agenda prepared at Jorrel Management for a Google Meet session chaired by the Managing Director. It included meeting objectives, attendees, facilitator assignments, agenda items with descriptions, presenters, and durations structured to keep the meeting on track and ensure all action items were captured."
+        data-details="Company: Jorrel Management | Meeting Type: Operations Rundown | Tool: Microsoft Word | Year: 2026"
+        data-img="meeting agenda.png"
+        data-viewlabel="View Meeting Agenda"
+        data-viewfile="Meeting Agenda.pdf">
+        <div class="portfolio-preview" style="padding:0;overflow:hidden;">
+          <img src="meeting agenda.png" alt="Meeting Agenda" loading="lazy" style="width:100%;height:200px;object-fit:cover;object-position:top center;" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Administrative Support</span>
+          <h3>Meeting Agenda and Minutes</h3>
+          <p>An operations rundown meeting agenda for Jorrel Management, including attendees, agenda items, presenters, and durations.</p>
+        </div>
+      </div>
+
+
+      <!-- CRM / NOTION -->
+      <div class="portfolio-card reveal" tabindex="0" role="button"
+        data-tag="CRM and Data Management"
+        data-title="Client Database and CRM Tracking"
+        data-desc="A Notion-based CRM board built to track client proposals, follow-up dates, and deal status at Ecopulse Technologies Limited. Each client record included their name, proposal status, and next action step, making it easy for the director to see exactly where every deal stood at any given time and ensuring no follow-up was missed."
+        data-details="Platform: Notion | Company: Ecopulse Technologies Limited | Year: 2025"
+        data-img="">
+        <div class="portfolio-preview" style="background:#f7f6f3;display:block;position:relative;height:200px;">
+          <div class="notion-sidebar">
+            <div class="notion-workspace">🏢 Ecopulse CRM</div>
+            <div class="notion-page active">📋 Client Tracker</div>
+            <div class="notion-page">📄 Proposals</div>
+            <div class="notion-page">📅 Follow-ups</div>
+            <div class="notion-page">📊 Reports</div>
+            <div class="notion-page">🤝 Partners</div>
+          </div>
+          <div class="notion-main">
+            <div class="notion-title">Client Tracker</div>
+            <table class="notion-table">
+              <tr><th>Client</th><th>Status</th><th>Next Step</th></tr>
+              <tr><td>Ade Holdings</td><td><span class="notion-tag tag-done">Done</span></td><td>Invoice sent</td></tr>
+              <tr><td>BrightSolar Co.</td><td><span class="notion-tag tag-progress">In Progress</span></td><td>Follow up</td></tr>
+              <tr><td>GreenBuild Ltd</td><td><span class="notion-tag tag-pending">Pending</span></td><td>Proposal due</td></tr>
+              <tr><td>Apex Realty</td><td><span class="notion-tag tag-done">Done</span></td><td>Signed</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">CRM and Data Management</span>
+          <h3>Client Database and CRM Tracking</h3>
+          <p>A Notion-based CRM board tracking client proposals, follow-up dates, and deal status — used at Ecopulse Technologies to streamline the sales pipeline.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO MODAL -->
+<div id="portfolioModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(44,26,14,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem;">
+  <div id="portfolioModalInner" style="background:var(--ivory);border-radius:12px;max-width:900px;width:100%;max-height:90vh;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 24px 64px rgba(44,26,14,0.25);">
+    <!-- Image side -->
+    <div style="overflow:hidden;max-height:90vh;">
+      <img id="modalImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+    </div>
+    <!-- Info side -->
+    <div style="padding:2rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <span id="modalTag2" style="font-size:0.72rem;font-weight:600;color:var(--terracotta);background:var(--blush);padding:0.2rem 0.8rem;border-radius:20px;letter-spacing:0.04em;"></span>
+        <button id="modalClose" style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--warm-mid);line-height:1;padding:0 0 0 1rem;">&times;</button>
+      </div>
+      <h2 id="modalTitle2" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--espresso);line-height:1.3;"></h2>
+      <p id="modalDesc2" style="font-size:0.9rem;color:var(--warm-mid);line-height:1.7;"></p>
+      <div id="modalDetails2" style="background:var(--blush);border-radius:6px;padding:0.8rem 1rem;font-size:0.8rem;color:var(--warm-mid);line-height:1.8;"></div>
+      <div id="modalActionBtn" style="margin-top:auto;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS BANNER -->
+<div class="achievements">
+  <div class="achievements-wrap">
+    <div class="achievements-track" id="achievementsTrack">
+      <div class="achievement-item"><span class="ach-icon">🏢</span> 6+ Industries Supported</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">⏱️</span> 2+ Years of Executive Support</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">📋</span> 100+ Documents and Proposals Drafted</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🌍</span> Remote-Ready Across Time Zones</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🎓</span> 2 Professional Certifications</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🔒</span> NDA-Friendly and Discreet</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">⚡</span> Fast Learner — Adapts to Any Tool</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🏢</span> 6+ Industries Supported</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">⏱️</span> 2+ Years of Executive Support</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">📋</span> 100+ Documents and Proposals Drafted</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🌍</span> Remote-Ready Across Time Zones</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🎓</span> 2 Professional Certifications</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">🔒</span> NDA-Friendly and Discreet</div>
+      <div class="ach-dot"></div>
+      <div class="achievement-item"><span class="ach-icon">⚡</span> Fast Learner — Adapts to Any Tool</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY HIRE ME -->
+<section class="why-hire" id="why">
+  <div class="section-inner">
+    <p class="section-label reveal">Why Choose Me</p>
+    <h2 class="section-title reveal">Why Hire Me</h2>
+    <div class="section-divider reveal"></div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-icon">🧠</span>
+        <h3>I Think, Not Just Execute</h3>
+        <p>A physics degree taught me to find patterns and solutions where others see chaos. Every task gets the same rigour as no detail is too small.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">⚡</span>
+        <h3>Fast, Reliable, and Responsive</h3>
+        <p>Quick turnarounds, clear updates, and zero delays. When you message me, you hear back, and when I take something on, it gets done.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🎯</span>
+        <h3>Cross-Industry Experience</h3>
+        <p>Tech, marketing, retail, logistics, meteorology, I have seen how different businesses operate and that breadth means fewer learning curves and faster results for you.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🔒</span>
+        <h3>Discreet and Trustworthy</h3>
+        <p>Sensitive emails, confidential documents, and private schedules are all handled professionally with the same care I would want applied to my own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I WORK BEST WITH -->
+<section class="who-section" id="who">
+  <div class="section-inner">
+    <p class="section-label reveal">Ideal Clients</p>
+    <h2 class="section-title reveal">Who I Work Best With</h2>
+    <div class="section-divider reveal"></div>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <span class="who-icon">🚀</span>
+        <div><h3>Startup Founders</h3><p>Building something new and need a reliable hand to manage the day-to-day so you can focus on growth.</p></div>
+      </div>
+      <div class="who-card reveal">
+        <span class="who-icon">💼</span>
+        <div><h3>CEOs and Executives</h3><p>Senior leaders who need an assistant they can hand things off to and trust that it will be handled with care and precision.</p></div>
+      </div>
+      <div class="who-card reveal">
+        <span class="who-icon">📦</span>
+        <div><h3>Small Business Owners</h3><p>Entrepreneurs juggling too many roles who need consistent, efficient support to bring structure to their day.</p></div>
+      </div>
+      <div class="who-card reveal">
+        <span class="who-icon">🌍</span>
+        <div><h3>International Clients</h3><p>Global teams and remote-first clients who need a VA that shows up consistently, regardless of the time zone.</p></div>
+      </div>
+      <div class="who-card reveal">
+        <span class="who-icon">✨</span>
+        <div><h3>Creative Entrepreneurs</h3><p>Content creators, coaches, and brand owners who need admin and social media support to scale their brand.</p></div>
+      </div>
+      <div class="who-card reveal">
+        <span class="who-icon">🏥</span>
+        <div><h3>Professional Services</h3><p>Consultants, lawyers, and professionals who need a sharp, detail-oriented assistant behind the scenes keeping things running.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-inner">
+    <p class="section-label reveal">Work History</p>
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="section-divider reveal"></div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <p class="timeline-date">August 2025 – Present</p>
+        <p class="timeline-role">Administrative Assistant</p>
+        <p class="timeline-company">Subuola Joe Ventures · Lagos, Nigeria</p>
+        <p class="timeline-desc">Maintained accurate stock records using spreadsheets and inventory systems. Prepared invoices, delivery notes, and purchase orders for customers and suppliers.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">January 2026 – April 2026</p>
+        <p class="timeline-role">Compliance Officer</p>
+        <p class="timeline-company">Jorrel Management · Lagos, Nigeria</p>
+        <p class="timeline-desc">Enforced daily compliance workflows and reported through the company's tracking system. Collaborated with leadership, HR, and Legal on staff performance and appraisals, and partnered with HR on onboarding and compliance documentation.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">February 2025 – June 2025</p>
+        <p class="timeline-role">Administrative and Partnership Officer</p>
+        <p class="timeline-company">Ecopulse Technologies Limited · Lagos, Nigeria</p>
+        <p class="timeline-desc">Managed the director's calendar, coordinated stakeholder communications, drafted solar energy proposals, and maintained client records using Notion CRM.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">August 2024 – January 2025</p>
+        <p class="timeline-role">Virtual Assistant</p>
+        <p class="timeline-company">Rated Miss Pretty · Lagos, Nigeria</p>
+        <p class="timeline-desc">Managed social media content across platforms, conducted audience research, and created graphics using Canva, which grew the brand engagement by 15%.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">January 2024 – June 2024</p>
+        <p class="timeline-role">Logistics Head</p>
+        <p class="timeline-company">Navigating the Next · Lagos, Nigeria</p>
+        <p class="timeline-desc">Oversaw end to end logistics planning, coordinated cross functional teams, and managed vendor relationships to ensure timely delivery and resource optimisation.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">August 2023 – August 2024</p>
+        <p class="timeline-role">General Secretary</p>
+        <p class="timeline-company">UNILAG Science Student Association · Lagos, Nigeria</p>
+        <p class="timeline-desc">Coordinated administrative efforts, managed official records, facilitated executive meetings, and ensured timely follow-through on action items.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <p class="timeline-date">September 2021 – November 2021 & June 2023 – October 2023</p>
+        <p class="timeline-role">Meteorologist Intern</p>
+        <p class="timeline-company">Nigerian Meteorological Agency · Ikeja, Lagos</p>
+        <p class="timeline-desc">Analysed meteorological data, prepared flight documents for airlines, and provided real-time weather updates and warnings during flight operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <p class="section-label reveal">Capabilities</p>
+    <h2 class="section-title reveal">Skills</h2>
+    <div class="section-divider reveal"></div>
+    <div class="skills-grid">
+      <div class="skills-group reveal">
+        <h3>Administrative and Executive</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Calendar Management</span>
+          <span class="skill-tag">Inbox Management</span>
+          <span class="skill-tag">Document Preparation</span>
+          <span class="skill-tag">Records Management</span>
+          <span class="skill-tag">Email Management</span>
+          <span class="skill-tag">Meeting Facilitation</span>
+          <span class="skill-tag">Travel Coordination</span>
+          <span class="skill-tag">Vendor Coordination</span>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <h3>Operations and Projects</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Project Coordination</span>
+          <span class="skill-tag">Logistics Management</span>
+          <span class="skill-tag">Process Documentation</span>
+          <span class="skill-tag">Compliance Management</span>
+          <span class="skill-tag">Data Entry</span>
+          <span class="skill-tag">Database Management</span>
+          <span class="skill-tag">Research and Analysis</span>
+          <span class="skill-tag">Stakeholder Communication</span>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <h3>Content and Social Media</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Social Media Management</span>
+          <span class="skill-tag">Content Creation</span>
+          <span class="skill-tag">Content Scheduling</span>
+          <span class="skill-tag">Graphic Design</span>
+          <span class="skill-tag">Copywriting</span>
+          <span class="skill-tag">Brand Management</span>
+          <span class="skill-tag">Audience Research</span>
+          <span class="skill-tag">Community Engagement</span>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <h3>Technical and Analytical</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Data Analysis</span>
+          <span class="skill-tag">Technical Report Writing</span>
+          <span class="skill-tag">CRM Management</span>
+          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">Analytical Thinking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools" id="tools">
+  <div class="section-inner">
+    <p class="section-label reveal">Tech Stack</p>
+    <h2 class="section-title reveal">Tools I Use</h2>
+    <div class="section-divider reveal"></div>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="office.png" alt="Microsoft Office" loading="lazy" />
+        Microsoft Office
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="search.png" alt="Google Workspace" loading="lazy" />
+        Google Workspace
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/notion" alt="Notion" loading="lazy" />
+        Notion
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/trello" alt="Trello" loading="lazy" />
+        Trello
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="Canva.png" alt="Canva" loading="lazy" />
+        Canva
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/hubspot" alt="HubSpot" loading="lazy" />
+        HubSpot
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="salesforce.png" alt="Salesforce" loading="lazy" />
+        Salesforce
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/zoho" alt="Zoho CRM" loading="lazy" />
+        Zoho CRM
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/html5" alt="HTML" loading="lazy" />
+        HTML and CSS
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" src="https://cdn.simpleicons.org/javascript" alt="JavaScript" loading="lazy" />
+        JavaScript
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="zoom.png" alt="Zoom" loading="lazy" />
+        Zoom
+      </div>
+      <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="slack.png" alt="Slack" loading="lazy" />
+        Slack
+    </div>
+    <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="asana-color.svg" alt="Asana" loading="lazy" />
+        Asana
+    </div>
+    <div class="tool-card reveal">
+        <img class="tool-icon-img" img src="calendly-color.svg" alt="Calendly" loading="lazy" />
+        Calendly
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications" id="certifications">
+  <div class="section-inner">
+    <p class="section-label reveal">Credentials</p>
+    <h2 class="section-title reveal">Education and Certifications</h2>
+    <div class="section-divider reveal"></div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <h3>BSc Applied Physics and Electronics</h3>
+        <p>University of Lagos, Lagos, Nigeria</p>
+        <span class="cert-year">2018 – 2024</span>
+      </div>
+      <div class="cert-card reveal">
+        <h3>Virtual Assistant Certification</h3>
+        <p>ALX Africa</p>
+        <span class="cert-year">2024</span>
+      </div>
+      <div class="cert-card reveal">
+        <h3>Certified Web Professional (CWP)</h3>
+        <p>CWW Tech Africa</p>
+        <span class="cert-year">2021</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <p class="section-label reveal">Common Questions</p>
+    <h2 class="section-title reveal">FAQ</h2>
+    <div class="section-divider reveal"></div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What are your working hours? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">I am flexible and can adapt to your time zone. I am based in Lagos (WAT, UTC+1). Let's find what works best for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Do you work with international clients? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Absolutely. I work fully remotely and can support clients and partners across different countries. Time zones, communication tools, and cultural nuances are all things I navigate comfortably, whether it is a UK morning call or a US afternoon check-in, I make it work.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What tools do you use for communication and project management? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">I am proficient in Google Workspace, Microsoft Office, Notion, Trello, Slack, WhatsApp, and Zoom, and I pick up new tools quickly, so whatever your team uses, I will get up to speed fast.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How do you handle confidential information? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Discretion is a core part of my professional ethos. I treat all client information with the highest level of confidentiality and am comfortable signing NDAs if required.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Are you available for full-time or part-time roles? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">I am open to both full-time and part-time arrangements depending on the scope of work. Feel free to reach out or book a discovery call directly at calendly.com/simisola-ogungbe and we can discuss what suits your needs best.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What industries have you worked in? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">I have experience across technology and clean energy, digital marketing, retail and commerce, non-profit and student leadership, and meteorology and aviation. My background makes me highly adaptable across industries.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's Work Together</h2>
+        <div class="section-divider"></div>
+        <p class="contact-desc">Got a role, a project, or just a question? Send me a message and let us figure out how I can help.</p>
+        <div class="contact-links">
+          <a href="mailto:ogungbejuliet@gmail.com" class="contact-link">
+            ✉️ ogungbejuliet@gmail.com
+            <button class="copy-btn" data-copy="ogungbejuliet@gmail.com">Copy</button>
+          </a>
+          <a href="tel:+2349028452108" class="contact-link">
+            📞 +234 902 845 2108
+            <button class="copy-btn" data-copy="+2349028452108">Copy</button>
+          </a>
+          <a href="https://www.linkedin.com/in/simisolaogungbe" target="_blank" class="contact-link">
+            💼 linkedin.com/in/simisolaogungbe
+          </a>
+        </div>
+        <a href="mailto:ogungbejuliet@gmail.com" class="btn-primary">Hire Me</a>
+        <a href="https://calendly.com/simisola-ogungbe" target="_blank" rel="noopener noreferrer" class="calendly-btn" style="margin-top:0.8rem;">📅 Book a Discovery Call</a>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/ogungbejuliet@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from VA portfolio site" />
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. John Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="e.g. VA Role Enquiry" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your needs..." required></textarea>
+          </div>
+          <div class="form-error" id="formError">Something went wrong sending your message. Please email me directly at ogungbejuliet@gmail.com.</div>
+          <div class="form-success" id="formSuccess">Message sent! I will be in touch shortly.</div>
+          <button type="submit" class="btn-primary" id="submitBtn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Simisola Ogungbe · Virtual Assistant · Lagos, Nigeria</p>
+</footer>
+
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp-btn" href="https://wa.me/2349028452108?text=Hi%20Simisola%2C%20I%20found%20your%20portfolio%20and%20I%20am%20interested%20in%20working%20with%20you." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+  // DARK MODE
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+  });
+
+  // HAMBURGER
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ACTIVE NAV
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => navObserver.observe(s));
+
+  // SCROLL REVEAL
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // BACK TO TOP
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // COPY
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+
+  // PORTFOLIO MODAL
+  // PORTFOLIO MODAL
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const portfolioModal = document.getElementById('portfolioModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalTag2 = document.getElementById('modalTag2');
+  const modalTitle2 = document.getElementById('modalTitle2');
+  const modalDesc2 = document.getElementById('modalDesc2');
+  const modalDetails2 = document.getElementById('modalDetails2');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(card) {
+    modalImg.src = card.dataset.img || '';
+    modalImg.alt = card.dataset.title || '';
+    modalTag2.textContent = card.dataset.tag || '';
+    modalTitle2.textContent = card.dataset.title || '';
+    modalDesc2.textContent = card.dataset.desc || '';
+    modalDetails2.innerHTML = (card.dataset.details || '').split('|').map(d => '<span style="display:block;">• ' + d.trim() + '</span>').join('');
+    const actionBtn = document.getElementById('modalActionBtn');
+    if (card.dataset.viewfile && card.dataset.viewlabel) {
+      actionBtn.innerHTML = '<a href="' + card.dataset.viewfile + '" target="_blank" rel="noopener noreferrer" class="modal-view-btn">📄 ' + card.dataset.viewlabel + '</a>';
+    } else {
+      actionBtn.innerHTML = '';
+    }
+    portfolioModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    portfolioModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  portfolioCards.forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); } });
+  });
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (portfolioModal) portfolioModal.addEventListener('click', e => { if (e.target === portfolioModal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePortfolioModal();
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // CONTACT FORM
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formSuccess.style.display = 'none';
+    formError.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      });
+
+      if (response.ok) {
+        formSuccess.style.display = 'block';
+        contactForm.reset();
+        setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+      } else {
+        formError.style.display = 'block';
+      }
+    } catch (err) {
+      formError.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+
+  // TYPING ANIMATION
+  const typingPhrases = [
+    'Executive Virtual Assistant',
+    'Calendar and Inbox Manager',
+    'Operations Coordinator',
+    'Social Media Manager',
+    'Your Reliable Remote Support'
+  ];
+  let phraseIdx = 0, charIdx = 0, deleting = false;
+  const typingEl = document.getElementById('typingText');
+  function typeLoop() {
+    if (!typingEl) return;
+    const current = typingPhrases[phraseIdx];
+    if (!deleting) {
+      typingEl.textContent = current.slice(0, ++charIdx);
+      if (charIdx === current.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
+    } else {
+      typingEl.textContent = current.slice(0, --charIdx);
+      if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % typingPhrases.length; }
+    }
+    setTimeout(typeLoop, deleting ? 45 : 90);
+  }
+  typeLoop();
+
+  // ANIMATED COUNTERS
+  function animateCounter(el, target, suffix) {
+    let start = 0;
+    const duration = 1800;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const statCards = document.querySelectorAll('.stat-card');
+  let countersStarted = false;
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !countersStarted) {
+        countersStarted = true;
+        const nums = document.querySelectorAll('.stat-number');
+        const data = [
+          { target: 2, suffix: '+' },
+          { target: 6, suffix: '+' },
+          { target: 2, suffix: '' }
+        ];
+        nums.forEach((el, i) => animateCounter(el, data[i].target, data[i].suffix));
+      }
+    });
+  }, { threshold: 0.5 });
+  if (statCards.length) counterObserver.observe(statCards[0]);
+
+</script>
+</body>
+</html>
